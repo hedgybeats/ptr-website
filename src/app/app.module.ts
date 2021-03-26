@@ -11,6 +11,7 @@ import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contact.component';
 import { PhotosComponent } from './photos/photos.component';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,15 @@ import { CommonModule } from '@angular/common';
     ContactComponent,
     PhotosComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, CommonModule, RouterModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    CommonModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
