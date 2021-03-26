@@ -1,3 +1,69 @@
 .light-text {
   color: #ffffff;
 }
+
+.navbar {
+  height: 60px;
+  background-color: #5124a0;
+}
+
+a {
+  cursor: pointer;
+}
+
+a.unstyle-link:link {
+  color: none;
+  cursor: pointer;
+}
+
+a.unstyle-link:visited {
+  color: none;
+  cursor: pointer;
+}
+
+a.unstyle-link:hover {
+  color: none;
+  cursor: pointer;
+}
+
+a.unstyle-link:active {
+  color: none;
+  cursor: pointer;
+}
+
+a.unstyle-link {
+  text-decoration: none;
+  color: none;
+}
+
+@media (max-width: 768px) {
+  #nav-items-lg {
+    display: none !important;
+  }
+  #contact-button {
+    display: none !important;
+  }
+  #nav-items-sm {
+    display: flex !important;
+  }
+}
+
+.active-route{
+  color: #fafafa !important;
+  font-weight: 600 !important;
+  text-shadow: 1px 1px 1px #000000 !important;
+}
+
+.active-route-contact{
+  color: #351254 !important;
+  font-weight: 500 !important;
+  text-decoration: underline !important;
+}
+
+.nav-menu-active{
+  background-color: #dadada;
+}
+
+.dropdown-item:active{
+  background-color: #9987a9;
+}
