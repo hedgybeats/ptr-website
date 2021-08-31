@@ -72,23 +72,57 @@
             </svg>
           </div>
           <ul class="dropdown-menu" aria-labelledby="nav-items-dropdown">
-            <li><a class="dropdown-item" routerLink="home" routerLinkActive="nav-menu-active">Home</a></li>
-            <li><a class="dropdown-item" routerLink="services" routerLinkActive="nav-menu-active">Services</a></li>
-            <li><a class="dropdown-item" routerLink="about" routerLinkActive="nav-menu-active">About us</a></li>
-            <li><a class="dropdown-item" routerLink="photos" routerLinkActive="nav-menu-active">Photos</a></li>
-            <li><a class="dropdown-item" routerLink="contact" routerLinkActive="nav-menu-active">Contact us</a></li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="home"
+                routerLinkActive="nav-menu-active"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="services"
+                routerLinkActive="nav-menu-active"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="about"
+                routerLinkActive="nav-menu-active"
+                >About us</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="photos"
+                routerLinkActive="nav-menu-active"
+                >Photos</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="contact"
+                routerLinkActive="nav-menu-active"
+                >Contact us</a
+              >
+            </li>
           </ul>
         </div>
       </li>
     </ul>
-    <button id="contact-button" class="btn btn-light p-1 ps-2 pe-2 me-3">
-      <a
-        class="unstyle-link text-dark"
-        routerLink="contact"
-        routerLinkActive="active-route-contact"
-      >
-        Contact us
-      </a>
+    <button
+      routerLink="contact"
+      routerLinkActive="active-route-contact"
+      id="contact-button"
+      class="btn btn-light p-1 ps-2 pe-2 me-3"
+    >
+      <a class="unstyle-link text-dark"> Contact us </a>
     </button>
   </nav>
 </header>

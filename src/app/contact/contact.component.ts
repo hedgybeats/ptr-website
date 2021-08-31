@@ -1,3 +1,4 @@
+import { EmailService } from './../_services/email.service';
 import { Component, OnInit } from '@angular/core';
 import {
   AbstractControl,
@@ -13,8 +14,14 @@ declare let Email: any;
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent implements OnInit {
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private emailService: EmailService) {}
+
+  emailSending = false;
+  emailSuccesful = false;
+  error: any;
+  successMsg: string;
   emailForm: FormGroup;
+
   ngOnInit(): void {
     this.emailForm = this.fb.group({
       Message: ['', Validators.required],
@@ -25,17 +32,25 @@ export class ContactComponent implements OnInit {
     return this.emailForm.get('Message');
   }
 
-  public SendEmail(): void {
+  public async SendEmail(): Promise<void> {
     if (this.emailForm.valid) {
-      Email.send({
-        Host: 'smtp.gmail.com',
-        Username: 'pallettruckrepairsnoreply@gmail.com',
-        Password: 'Lay1245369',
-        To: 'laytonhedges119@gmail.com',
-        From: 'pallettruckrepairsnoreply@gmail.com',
-        Subject: 'Customer email',
-        Body: this.Message.value,
-      }).then((message) => this.ClearInput());
+      this.emailSending = true;
+      const success = await this.emailService.SendEmail(
+        'subject',
+        this.Message.value
+      );
+      this.emailSending = false;
+      if (success) {
+        this.emailSuccesful = true;
+        this.error = undefined;
+        this.ClearInput();
+      } else {
+        this.emailSuccesful = false;
+        this.error = 'Something went wrong';
+      }
+    } else {
+      this.emailSuccesful = false;
+      this.error = 'Message is required';
     }
   }
 

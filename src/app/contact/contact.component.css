@@ -5,3 +5,17 @@
 .test{
     max-width: 1000px;
 }
+@media (max-width: 768px) {
+    #email-card {
+      width: 100% !important;
+    }
+    #map{
+        width: 50px;
+    }
+  }
+
+  #locationMap{
+      margin: 0px !important;
+      margin-left: 16px !important;
+      margin-top:8px !important;
+  }
